@@ -1,0 +1,28 @@
+<h3> Eat a burger:</h3>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> partials/burger-block devour=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h3> Devoured burgers: </h3>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> devoured-block devour=true}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+<form class="create-form">
+
+  <div class="newBurger">
+    <label for="name">What's your special order?</label>
+    <input type="text" id="name" name="name">
+  </div>
+    <button>Submit</button>
+</form>
