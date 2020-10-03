@@ -1,4 +1,4 @@
-//Import Mysql connection
+// Import Mysql connection
 var connection = require("../config/connection.js");
 
 function objToSql(ob) {
@@ -26,7 +26,7 @@ function objToSql(ob) {
 var orm = {
 
   // ORM method that selects all from the table 
-  selectAll: function (table, cb) {
+  all: function (table, cb) {
     var queryString = "SELECT * FROM " + table + ";"
     connection.query(queryString, function (err, response) {
       if (err) throw err;
@@ -37,7 +37,8 @@ var orm = {
   },
 
   // ORM method that inserts a new row into the table
-  insertOne: function (table, col, val, cb) {
+
+  create: function (table, col, val, cb) {
     var queryString = "INSERT INTO " + table + '(' + col + ') VALUES ("' + val + '");'
     connection.query(queryString, function (err, response) {
       if (err) throw err;
@@ -47,8 +48,15 @@ var orm = {
   },
 
   // ORM method that updates the Boolean devoured in the table
-  updateOne: function (table, colVal, condition, cb) {
-    var queryString = "UPDATE " + table + " SET " + objToSql(colVal) + " WHERE " + condition + ";"
+  update: function (table, colVal, condition, cb) {
+    var queryString = "UPDATE " + table;
+  
+      queryString += " SET ";
+      queryString += objToSql(colVal);
+      queryString += " WHERE ";
+      queryString += condition;
+  
+      console.log("UPDATE" + queryString);
     connection.query(queryString, function (err, response) {
       console.log(queryString);
       if (err) throw err;

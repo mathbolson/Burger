@@ -1,0 +1,35 @@
+.jumbotron {
+    font-family: 'Mogra', cursive;
+    color: red;
+    text-align: center;
+    background: transparent;
+}
+
+.jumbo-title{
+    font-size: 8rem;
+    text-shadow: 0px 0 black, 0 0px black, 6px 0 black, 0 0px black;
+}
+
+body {
+    background: url(https://wallpaperforu.com/wp-content/uploads/2020/08/food-wallpaper-200802192320121920x1080.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.card {
+    background: transparent;
+    border: none;
+
+}
+
+.card-body {
+    background-color: wheat;
+
+}
+
+.card-title {
+    text-align: center;
+}

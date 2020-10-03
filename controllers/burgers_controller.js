@@ -18,26 +18,40 @@ router.get("/", function (req, res) {
 
 // POST route which will be used to create a newBurger
 router.post("/api/burgers", function (req, res) {
-  burger.create(req.body.name, function (result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+  burger.create(req.body.name, (result) => {
+    res.json(result);
   });
 });
 
 // PUT route which will update the boolean devoured
 router.put("/api/burgers/:id", function(req, res) {
+  console.log("does this work?", res)
   var condition = "id = " + req.params.id;
-  burger.update(
-    {
-      devoured : req.body.devoured
-    },
-    condition, function (result) {
+  
+  burger.update({
+  devoured: req.body.devoured
+  }, condition, (result) => {
+
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {
       res.status(200).end();
     }
-  })
+  });
+ 
+ 
+  // var condition = "id = " + req.params.id;
+  // burger.update(
+  //   {
+  //     devoured : req.body.devoured
+  //   },
+  //   condition, function (result) {
+  //   if (result.changedRows == 0) {
+  //     return res.status(404).end();
+  //   } else {
+  //     res.status(200).end();
+  //   }
+  // })
 });
 
 // Export routes for server.js to use.
