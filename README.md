@@ -23,6 +23,9 @@
   - run on your teminal 'npm i express'
   - run on your termina 'npm mysql express-handlebars' 
   ## Usage:
+  [Heroku Link](https://burger-eatery.herokuapp.com/)
+  I tried my best to fix my heroku but it doesn't seem to work at all. 
+  
   
   ## license:
   MIT_License
