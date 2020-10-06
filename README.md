@@ -25,7 +25,7 @@
   ## Usage:
   [Heroku Link](https://burger-eatery.herokuapp.com/)
   I tried my best to fix my heroku but it doesn't seem to work at all. 
-  
+  [Portfolio Update Link](https://github.com/mathbolson/Portfolio)
   
   ## license:
   MIT_License
